@@ -3,10 +3,8 @@ const router = express.Router();
 //routes/user.js
 const dbSingleton = require("../dbSingleton");
 //router 
-
-// Execute a query to the database
 const db = dbSingleton.getConnection();
-
+ 
 router.get("/", (req, res) => {
   const query = " SELECT * FROM users";
 
