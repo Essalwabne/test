@@ -1,2 +1,4 @@
 node_modules/
-dbSingilton
+.DS_Store
+.env
+dbSingleton
