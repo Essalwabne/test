@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 //routes/user.js
 const dbSingleton = require("../dbSingleton");
+//router 
 
 // Execute a query to the database
 const db = dbSingleton.getConnection();
