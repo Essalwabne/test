@@ -3,7 +3,7 @@ const app = express();
 const userRoutes = require("./routes/user");
 const productRoutes = require("./routes/products")
 
-
+//hello every body
 const port = 3000;
 
 app.use(express.json());
