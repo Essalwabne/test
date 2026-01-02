@@ -1,0 +1,30 @@
+name: Check title 
+
+on:
+  push:
+    branches:
+        - main 
+  pull_request:
+
+    
+    
+jobs:
+  run-script:
+      runs-on : ubuntu-latest
+
+      steps:
+      - name: Validate PR title
+        run: |
+          python3 - <<EOF
+          import sys
+
+          title = "${{ github.event.pull_request.title }}"
+          print("PR title:", title)
+
+          if not title.startswith("Task"):
+              print("❌ PR title must start with 'Task'")
+              sys.exit(1)
+
+          print("✅ PR title format is valid")
+          EOF
+      
