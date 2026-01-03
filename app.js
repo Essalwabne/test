@@ -8,7 +8,7 @@ const port = 3000;
 
 app.use(express.json());
 
-app.use("/users", userRoutes);
+app.use("/users", userRoutes);git 
 app.use("/products", productRoutes);
 
 app.listen(port, () => {
