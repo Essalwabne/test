@@ -41,7 +41,10 @@ jobs:
         if [ $exit_code -eq 124 ]; then
           echo "✅ Application started successfully (timed out as expected)"
           exit 0
-        else
-          echo "Application exited with code $exit_code"
+        elif [ -z "$exit_code" ]; then
+          echo "✅ Application started and exited cleanly"
           exit 0
+        else
+          echo "❌ Application failed to start with exit code $exit_code"
+          exit 1
         fi
