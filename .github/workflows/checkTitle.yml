@@ -1,18 +1,14 @@
-name: Check title 
+name: Check PR Title
 
 on:
-  push:
-    branches:
-        - main 
   pull_request:
+    types: [opened, edited, synchronize, reopened]
 
-    
-    
 jobs:
-  run-script:
-      runs-on : ubuntu-latest
-
-      steps:
+  validate-title:
+    runs-on: ubuntu-latest
+    
+    steps:
       - name: Validate PR title
         run: |
           python3 - <<EOF
@@ -27,4 +23,4 @@ jobs:
 
           print("✅ PR title format is valid")
           EOF
-      
+
